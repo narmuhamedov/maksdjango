@@ -1,5 +1,6 @@
+from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
-from . import models
+from . import models, forms
 
 
 #получение не полной информации о фильме
@@ -12,3 +13,18 @@ def tvshow(request):
 def tvshow_detail(request, id):
     shows = get_object_or_404(models.TVShow, id=id)
     return render(request, 'tvshows_detail.html', {'shows_id':shows})
+
+
+#create
+def addshows(request):
+    method = request.method
+    if method == 'POST':
+        form = forms.ShowForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('Удачно добавлено')
+
+    else:
+        form = forms.ShowForm()
+
+    return render(request, 'addtvshow.html', {'form': form})

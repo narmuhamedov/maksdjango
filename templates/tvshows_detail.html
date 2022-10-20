@@ -1,17 +1,38 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>TVShow detail</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<h1>{{shows_id.title}}</h1>
-<h2>{{shows_id.description}}</h2>
-<img src="{{shows_id.image.url}}" alt="" width="400" height="300">
-<p>{{shows_id.quantity}}</p>
-<p>{{shows_id.genre}}</p>
-<p>{{shows_id.created_date}}</p>
-<p>{{shows_id.updated_date}}</p>
+<style>
+    body{
+        background-color: #6a1a21;
 
+    }
+    h1{
+        color: green;
+    }
+    p{
+        color: orange;
+    }
+</style>
+<center>
+    <br><br>
+<figure class="figure">
+  <img src="{{shows_id.image.url}}" class="figure-img img-fluid rounded" alt="..." width="200" height="300">
+  <figcaption class="figure-caption"><h1>Название: {{shows_id.title}}</h1>
+<p>Описание:{{shows_id.description}}</p>
+<p>Колличество серий: {{shows_id.quantity}}</p>
+<p>Жанр: {{shows_id.genre}}</p>
+<p>Дата Создания: {{shows_id.created_date}}</p>
+<p>Дата Обновления: {{shows_id.updated_date}}</p>.</figcaption>
+    <button type="button" class="btn btn-danger"><a href="/tvshows/" style="text-decoration: none;
+ color: black">На главную</a></button>
+</figure>
+</center>
 </body>
 </html>

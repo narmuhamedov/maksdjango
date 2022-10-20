@@ -1,18 +1,41 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>TV Shows</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-{% for i in shows_object %}
+<style>
+    body{
+        background-color: #6a1a21;
+
+    }
+    h1{
+        color: green;
+    }
+    p{
+        color: black;
+    }
+</style>
 <center>
-    <hr>
-<img src="{{i.image.url}}" alt="" width="120" height="120">
-    <h2>{{i.title}}</h2>
-    <a href="/tvshows/{{i.id}}">Подробнее</a>
-    <hr>
-</center>
+{% for i in shows_object %}
+<div class="card" style="width: 18rem;">
+  <img src="{{i.image.url}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{i.title}}</h5>
+    <p class="card-text">{{i.genre}}</p>
+    <a href="/tvshows/{{i.id}}" class="btn btn-primary">Подробнее</a><br><br>
+
+      <br><br>
+  </div>
+</div>
 {%endfor%}
+    <br>
+     <button type="button" class="btn btn-danger"><a href="/add-shows/" style="text-decoration: none;
+ color: black">Добавить новый фильм</a></button>
+    </center>
 </body>
 </html>
