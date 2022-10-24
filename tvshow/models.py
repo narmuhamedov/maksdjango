@@ -15,6 +15,7 @@ class TVShow(models.Model):
     image = models.ImageField(upload_to='')
     quantity = models.IntegerField()
     genre = models.CharField(choices=CHOISE, max_length=100)
+    trailers_film = models.URLField(null=True)
     created_date = models.DateField(auto_now_add=True)
     updated_date = models.DateField(auto_now=True)
 
