@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.button {
+    max-width: 100px;
+    padding: 5px 15px;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+input, button {
+    cursor: pointer;
+}
+
+header {
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+.header {
+    min-height: 75px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.header__logo {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header__logo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.header__logo p {
+    font-size: 20px;
+}
+
+.header__links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__links a {
+    margin-right: 30px;
+}
+
+.header__search {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.header__search input {
+    margin-right: 15px;
+    padding: 5px;
+    border: none;
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+.post {
+
+}
+
+.post img {
+    width: 380px;
+    height: 500px;
+}
+
+.div1 {
+    display: flex;
+}
+
+.div1 img {
+    margin-right: 30px;
+}
+
+.div2 {
+    display: flex;
+    flex-direction: column;
+}
+
+.div2 h1 {
+    margin-bottom: 10px
+}
+
+.div2 p {
+    text-align: justify;
+    margin-bottom: 10px;
+}
+
+.div2 span {
+    font-weight: 700;
+}
+
+.div3 {
+    margin-top: 30px;
+    text-align: justify;
+}
+
+.div4 {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.div4 button {
+    margin-right: 30px;
+}
+
+.div4 p {
+    margin-right: 30px;
+}
+
+footer {
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
+.footer {
+    min-height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 10px;
+}

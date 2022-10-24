@@ -3,36 +3,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>TVShow detail</title>
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}" />
-    <link rel="stylesheet" href="style.css">
+    <title>Python Cinema</title>
+    <link rel="stylesheet" href="{% static 'css/detail.css' %}"/>
 </head>
 <body>
-<style>
-    body{
-        background-color: #6a1a21;
+<div class="container">
+    <header class="header">
+        <div class="header__logo">
+            <img src="https://cdn4.iconfinder.com/data/icons/scripting-and-programming-languages/512/Python_logo-512.png">
+            <p>Python Cinema</p>
+        </div>
+        <div class="header__links">
+            <a href="/tvshows/">Home</a>
+            <a href="#">About</a>
+            <a href="#">Features</a>
+            <a href="#">Contacts</a>
+            <a href="/add-shows/">Add Shows</a>
+        </div>
+        <div class="header__search">
+            <input placeholder="Search">
+            <button class="button">Search</button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="post">
+            <div class="div1">
+                <img src="{{shows_id.image.url}}" alt="...">
+                <div class="div2">
+                    <h1>{{shows_id.title}}</h1>
+                    <p>{{shows_id.description}}</p>
 
-    }
-    h1{
-        color: green;
-    }
-    p{
-        color: orange;
-    }
-</style>
-<center>
-    <br><br>
-<figure class="figure">
-  <img src="{{shows_id.image.url}}" class="figure-img img-fluid rounded" alt="..." width="200" height="300">
-  <figcaption class="figure-caption"><h1>Название: {{shows_id.title}}</h1>
-<p>Описание:{{shows_id.description}}</p>
-<p>Колличество серий: {{shows_id.quantity}}</p>
-<p>Жанр: {{shows_id.genre}}</p>
-<p>Дата Создания: {{shows_id.created_date}}</p>
-<p>Дата Обновления: {{shows_id.updated_date}}</p>.</figcaption>
-    <button type="button" class="btn btn-danger"><a href="/tvshows/" style="text-decoration: none;
- color: black">На главную</a></button>
-</figure>
-</center>
+                </div>
+            </div>
+            <div class="div3">
+                <p>{{post_id.full_description}}</p>
+            </div>
+            <div class="div4">
+                <a href="/tvshows/">
+                    <button class="button">< Back</button>
+                </a>
+                <p><span>Create: </span>{{shows_id.created_date}}</p>
+                <p><span>Update: </span>{{shows_id.updated_date}}</p>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <p>Copyright © 2022</p>
+    </footer>
+</div>
 </body>
 </html>
