@@ -22,3 +22,12 @@ class TVShow(models.Model):
     def __str__(self):
         return self.title
 
+
+class About_Us(models.Model):
+    img = models.ImageField(upload_to='')
+    description = models.TextField()
+    work_year = models.IntegerField(max_length=20)
+
+    def __str__(self):
+        return self.description
+

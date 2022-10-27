@@ -28,3 +28,28 @@ def addshows(request):
         form = forms.ShowForm()
 
     return render(request, 'addtvshow.html', {'form': form})
+
+
+
+#update
+def show_update(request, id):
+    show_object = get_object_or_404(models.TVShow, id=id)
+    if request.method == "POST":
+        form = forms.ShowForm(instance=show_object, data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse('TV good update')
+    else:
+        form = forms.ShowForm(instance=show_object)
+    return render(request, 'tvshow_update.html', {'form': form, 'object': show_object})
+
+#delete
+def show_delete(request, id):
+    show_object = get_object_or_404(models.TVShow, id=id)
+    show_object.delete()
+    return HttpResponse('Tv Show Deleted')
+
+#Инфа о нас
+def about_us(request):
+    about = models.About_Us.objects.all()
+    return render(request, "about.html", {'about':about})
