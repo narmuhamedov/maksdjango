@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-{% load static %}
+{%load static%}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Python Cinema</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Title</title>
+    <link rel="stylesheet" href="{% static 'css/sliders.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
 </head>
 <body>
 <div class="container">
@@ -14,9 +15,9 @@
             <p>Python Cinema</p>
         </div>
         <div class="header__links">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="/about_us/">About</a>
-            <a href="/sliders/">Features</a>
+            <a href="#">Features</a>
             <a href="/contacts/">Contacts</a>
             <a href="/admin/">Login</a>
             <a href="/add-shows/">Add Shows</a>
@@ -28,26 +29,20 @@
     </header>
     <main class="main">
         <section class="posts">
-            {% for post in object_list %}
-            <div class="posts__item">
-                <div class="posts__item-image">
-                    <img src="{{post.image.url}}" alt="">
-                </div>
-                <div class="posts__item-text">
-                    <h1>{{post.title}}</h1>
-                    <p>{{post.description}}</p>
-                    <a href="/tvshows/{{post.id}}" class="">
-                        <button class="button">More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="posts__border-bottom"></div>
-            {% endfor %}
+            <center>
+  <div class="container_slider_css">
+  {% for i in slide %}
+  <img class="photo_slider_css" src="{{i.image.url}}" alt="" >
+  {%endfor%}
+</div>
+                </center>
         </section>
     </main>
     <footer class="footer">
         <p>Copyright © 2022</p>
     </footer>
 </div>
+
+
 </body>
 </html>

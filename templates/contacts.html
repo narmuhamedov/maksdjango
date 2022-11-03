@@ -3,8 +3,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Python Cinema</title>
-    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <title>Contacts</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 <div class="container">
@@ -14,9 +14,9 @@
             <p>Python Cinema</p>
         </div>
         <div class="header__links">
-            <a href="#">Home</a>
+            <a href="/">Home</a>
             <a href="/about_us/">About</a>
-            <a href="/sliders/">Features</a>
+            <a href="#">Features</a>
             <a href="/contacts/">Contacts</a>
             <a href="/admin/">Login</a>
             <a href="/add-shows/">Add Shows</a>
@@ -28,26 +28,25 @@
     </header>
     <main class="main">
         <section class="posts">
-            {% for post in object_list %}
-            <div class="posts__item">
-                <div class="posts__item-image">
-                    <img src="{{post.image.url}}" alt="">
-                </div>
-                <div class="posts__item-text">
-                    <h1>{{post.title}}</h1>
-                    <p>{{post.description}}</p>
-                    <a href="/tvshows/{{post.id}}" class="">
-                        <button class="button">More</button>
-                    </a>
-                </div>
-            </div>
-            <div class="posts__border-bottom"></div>
-            {% endfor %}
+            <center>
+            {% for i in contacts %}
+<h1>{{i.director}}</h1>
+<p>{{i.phone_number}}</p>
+<img src="{{i.image.url}}" alt="">
+<p>{{i.work_years}}</p>
+
+
+{%endfor%}
+                </center>
         </section>
     </main>
     <footer class="footer">
         <p>Copyright © 2022</p>
     </footer>
 </div>
+
+
+
+
 </body>
 </html>

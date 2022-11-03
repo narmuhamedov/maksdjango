@@ -23,6 +23,15 @@ class TVShow(models.Model):
         return self.title
 
 
+class CommentTvShows(models.Model):
+    comment = models.ForeignKey(TVShow, on_delete=models.CASCADE, related_name='comment')
+    text = models.TextField()
+    created_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.comment.title
+
+
 class About_Us(models.Model):
     img = models.ImageField(upload_to='')
     description = models.TextField()
@@ -31,3 +40,17 @@ class About_Us(models.Model):
     def __str__(self):
         return self.description
 
+
+#Контакты о кинотеатре
+class Contact(models.Model):
+    director = models.CharField(max_length=60)
+    phone_number = models.CharField(max_length=20)
+    image = models.ImageField(upload_to='')
+    work_years = models.DateField()
+
+    def __str__(self):
+        return self.director
+
+#sliders
+class Sliders(models.Model):
+    image = models.ImageField(upload_to='')
